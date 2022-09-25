@@ -27,13 +27,13 @@ def generateWave(quake, train):
         elif train == False:
             filtered = np.vstack((filtered, delta)).T
         
-    with open("NoiseArrayTest.txt", "ab") as f:
+    with open("datasets\NoiseArrayTest.txt", "ab") as f:
         np.savetxt(f, filtered)
     
     if train == True:
-        lines = open("NoiseArrayTrain.txt").readlines()
+        lines = open("datasets\NoiseArrayTrain.txt").readlines()
         random.shuffle(lines)
-        open("NoiseArrayTrain.txt", 'w').writelines(lines)
+        open("datasets\NoiseArrayTrain.txt", 'w').writelines(lines)
 
 generateWave(quake = False, train = False)
 generateWave(quake = True, train = False)
