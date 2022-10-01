@@ -7,6 +7,9 @@ def generateWave(quake, train):
     fal = np.zeros(1000)
     y = np.random.rand(1600)
 
+    quake = False
+    train = False
+
     if quake == True:
         win = scipy.signal.hann(3)  
     else:
@@ -36,6 +39,4 @@ def generateWave(quake, train):
         random.shuffle(lines)
         open("datasets/NoiseArrayTrain.txt", 'w').writelines(lines)
 
-generateWave(quake = False, train = False)
-generateWave(quake = False, train = False)
-generateWave(quake = False, train = False)
+generateWave()
